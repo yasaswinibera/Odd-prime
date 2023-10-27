@@ -1,7 +1,9 @@
 
 // This is my implementation for printing One-digit-difference prime numbers.
+
 /*The one-digit-difference prime numbers are those which have the difference 
-between consective digits of the number as one and also the number has to be prime.*/
+ as one between consective digits of the number  
+and also the number has to be prime.*/
 
 /**This is a function to check whether the number is prime or not
  * @param number takes input number to check if it is prime or not
@@ -34,17 +36,17 @@ function oddCheck(number)
     let result 
     const digits = String(number).split('').map(Number)
     for(let i=1;i<(digits.length);i++)
+    {
+        difference = digits[i-1]-digits[i]
+        if (difference === 1 || difference === -1)
         {
-            difference = digits[i-1]-digits[i]
-            if (difference === 1 || difference === -1)
-            {
-              result = 0  
-            }
-            else
-            {
-               result = 1
-            }
+           result = 0  
         }
+        else
+        {
+           result = 1
+        }
+    }
     return result
 }
  /**This is a function to create an array with numbers that are satisfying
