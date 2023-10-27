@@ -1,0 +1,137 @@
+<!--This the html code for validation form 
+to verify whether the given number is prime and 
+the difference between the consecutive digits is one-->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title> ODD_PRIME</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      
+    h2 {
+        color: #333;
+       }
+      
+    p {
+        color: #555;
+        font-size: 18px;
+        margin: 20px 0;
+      }
+      
+    input {
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        outline: none;
+      }
+      
+    button {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+    button:hover {
+        background-color: #0056b3;
+      }
+</style>    
+</head>    
+<body>
+
+<h2>JavaScript Validation</h2>
+
+<p>To check the number is prime and 
+    its consecutive digits has difference one</p>
+
+<p>Please enter a number between 1 and 10000000:</p>
+
+<input id="number">
+
+<button type="button" onclick="validateNumber()">Submit</button>
+
+<p id="demo"></p>
+
+<script>
+
+// This is my implementation for printing One-digit-difference prime numbers.
+
+/*The one-digit-difference prime numbers are those which have the difference 
+between consective digits of the number as one 
+and also the number has to be prime.*/
+
+/** This is a function to check whether the number is prime or not
+* @param{Number} num takes input number to check if it is prime or not
+@return true if it is prime or false if it is not prime. */
+
+function isPrime(num) {
+
+    let sqrtnum=Math.floor(Math.sqrt(number))
+
+    let prime = number != 1
+
+    for(let i=2; i<sqrtnum+1; i++) 
+    { 
+        if(number % i == 0) 
+        {
+            prime = false
+            break
+        }
+    }
+    return prime;  //return true if it is prime
+}
+/** This a function to verify whether the consecutive digits in the input number
+*has the difference as one between them.
+*@param number takes the number as function parameter.
+*@return the boolean value*/
+
+function numOddCheck(number)
+{
+    let difference = 0
+    let result 
+    const digits = String(number).split('').map(Number)
+    for(let i=1;i<(digits.length);i++)
+        {
+            difference = digits[i-1]-digits[i]
+            if (difference === 1 || difference === -1)
+            {
+              result = 0  
+            }
+            else
+            {
+               result = 1
+            }
+        }
+    return result
+}
+
+/*This is a function to validate the input number is satisfying
+one-digit-difference and prime number*/
+
+function validateNumber()
+{
+   
+    let number = document.getElementById("number").value;
+        if (numOddCheck(number) === 0 && isPrime(number) ===true)
+        {
+            alert('YES ,The number is ODD-prime');   
+        }
+         else
+        {
+            alert('NO ,The number is not ODD-prime ');
+        }
+}
+</script>
+</body>
+</html> 
