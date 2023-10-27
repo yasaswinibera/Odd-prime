@@ -48,4 +48,5 @@ function isPrime(num) {
      return result
   }
   // printing the numbers that are prime and having one-digit-difference
+  console.log("The list of numbers that have one-digit-difference and prime are")
   console.log(OneDigitDifference())
