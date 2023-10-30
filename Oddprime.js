@@ -6,7 +6,7 @@
 and also the number has to be prime.*/
 
 /**This is a function to check whether the number is prime or not
- * @param number takes input number to check if it is prime or not
+ * @param {Number} number takes input number to check if it is prime or not
  * @return true if it is prime or false if it is not prime
 */
  
@@ -27,8 +27,8 @@ function isPrime(number)
 
 /**This a function to verify whether the consecutive digits in the input number
  * has the difference one between them.
- *@param number takes the input number for ODD check.
- *@return the value */
+ *@param {Number} number takes the input number for ODD check.
+ *@return the value 1 if the number is ODD or 0 if it is not ODD*/
 
 function oddCheck(number)
 {
@@ -37,7 +37,7 @@ function oddCheck(number)
     const digits = String(number).split('').map(Number)
     for(let i = 1 ; i < (digits.length) ; i++)
     {
-        difference = digits[i-1]-digits[i]
+        difference = digits[i-1] - digits[i]
         if (difference === 1 || difference === -1)
         {
            result = 0  
@@ -69,7 +69,9 @@ function oddPrimeNumber()
             count++
         }
     }
+    // printing the total count of ODD-Prime numbers.
     console.log(`The count of the numbers are ${count}`)
+   //printing the list of ODD-Prime numbers.
     console.log("The list of the numbers that are ODD-Prime is")
     // returns the resultant array of numbers that are ODD-Prime.
     return result   
