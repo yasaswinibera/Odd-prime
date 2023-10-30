@@ -72,16 +72,16 @@ between consective digits of the number as one
 and also the number has to be prime.*/
 
 /** This is a function to check whether the number is prime or not
-*@param num takes input number to check if it is prime or not
+*@param {Number} num takes input number to check if it is prime or not
 *@return true if it is prime or false if it is not prime. */
 
 function isPrime(num) {
 
-    let sqrtnum=Math.floor(Math.sqrt(number))
+    let sqrtnum = Math.floor(Math.sqrt(number))
 
     let prime = number != 1
 
-    for(let i=2; i<sqrtnum+1; i++) 
+    for(let i = 2 ; i < sqrtnum+1; i++) 
     { 
         if(number % i == 0) 
         {
@@ -89,21 +89,22 @@ function isPrime(num) {
             break
         }
     }
-    return prime;  //return true if it is prime
+    //return true if the number is prime or false if the number is not prime.
+    return prime  
 }
 /** This a function to verify whether the consecutive digits in the input number
 *has the difference as one between them.
-*@param number takes the number as function parameter.
-*@return the boolean value*/
+*@param {Number} number takes the number as function parameter.
+*@return the value*/
 
 function numOddCheck(number)
 {
     let difference = 0
     let result 
     const digits = String(number).split('').map(Number)
-    for(let i=1;i<(digits.length);i++)
+    for(let i = 1 ; i < (digits.length)  ;i++)
         {
-            difference = digits[i-1]-digits[i]
+            difference = digits[i-1] - digits[i]
             if (difference === 1 || difference === -1)
             {
               result = 0  
@@ -113,6 +114,7 @@ function numOddCheck(number)
                result = 1
             }
         }
+    //return 1 if the number is ODD or 0 if the number is not ODD.
     return result
 }
 
@@ -123,13 +125,13 @@ function validateNumber()
 {
    
     let number = document.getElementById("number").value;
-        if (numOddCheck(number) === 0 && isPrime(number) ===true)
+        if (numOddCheck(number) === 0 && isPrime(number) === true)
         {
-            alert('YES ,The number is ODD-prime');   
+            alert('YES ,The number is ODD-prime')  
         }
          else
         {
-            alert('NO ,The number is not ODD-prime ');
+            alert('NO ,The number is not ODD-prime ')
         }
 }
 </script>
